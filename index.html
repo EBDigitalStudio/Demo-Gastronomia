@@ -1,763 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NOIR — Restaurante & Bar</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Cormorant+Garamond:wght@300;400;500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --black: #0a0a0a;
-    --white: #f5f0eb;
-    --gray: #1a1a1a;
-    --gray2: #2a2a2a;
-    --accent: #c8a96e;
-    --text-muted: #888;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--black);
-    color: var(--white);
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
-    overflow-x: hidden;
-  }
-
-  /* ── NAV ── */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 3rem;
-    background: rgba(10,10,10,0.9);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(200,169,110,0.15);
-    transition: all 0.3s;
-  }
-
-  .nav-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
-    font-weight: 900;
-    letter-spacing: 0.3em;
-    color: var(--white);
-    text-decoration: none;
-  }
-
-  .nav-logo span { color: var(--accent); }
-
-  .nav-links {
-    display: flex;
-    gap: 2.5rem;
-    list-style: none;
-  }
-
-  .nav-links a {
-    color: var(--text-muted);
-    text-decoration: none;
-    font-size: 0.7rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    transition: color 0.3s;
-  }
-
-  .nav-links a:hover { color: var(--accent); }
-
-  .nav-cta {
-    background: var(--accent);
-    color: var(--black) !important;
-    padding: 0.6rem 1.4rem;
-    font-weight: 600 !important;
-    letter-spacing: 0.15em !important;
-  }
-
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    padding: 4px;
-  }
-
-  .hamburger span {
-    display: block;
-    width: 24px;
-    height: 1px;
-    background: var(--white);
-    transition: all 0.3s;
-  }
-
-  /* ── HERO ── */
-  .hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    background: var(--black);
-  }
-
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(ellipse 60% 60% at 70% 50%, rgba(200,169,110,0.08) 0%, transparent 70%),
-      radial-gradient(ellipse 40% 40% at 20% 80%, rgba(200,169,110,0.05) 0%, transparent 60%);
-  }
-
-  .hero-grid {
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(200,169,110,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(200,169,110,0.04) 1px, transparent 1px);
-    background-size: 60px 60px;
-  }
-
-  .hero-content {
-    position: relative;
-    text-align: center;
-    padding: 2rem;
-    animation: fadeUp 1s ease both;
-  }
-
-  .hero-eyebrow {
-    font-size: 0.65rem;
-    letter-spacing: 0.5em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 1.5rem;
-  }
-
-  .hero-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(4rem, 12vw, 10rem);
-    font-weight: 900;
-    line-height: 0.9;
-    letter-spacing: -0.02em;
-    margin-bottom: 1rem;
-  }
-
-  .hero-title em {
-    font-style: italic;
-    color: var(--accent);
-  }
-
-  .hero-subtitle {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1rem, 3vw, 1.4rem);
-    color: var(--text-muted);
-    letter-spacing: 0.1em;
-    margin-bottom: 3rem;
-  }
-
-  .hero-actions {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .btn-primary {
-    background: var(--accent);
-    color: var(--black);
-    padding: 1rem 2.5rem;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s;
-  }
-
-  .btn-primary:hover { background: var(--white); }
-
-  .btn-outline {
-    background: transparent;
-    color: var(--white);
-    padding: 1rem 2.5rem;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: 1px solid rgba(245,240,235,0.3);
-    cursor: pointer;
-    transition: all 0.3s;
-  }
-
-  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
-
-  .hero-scroll {
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--text-muted);
-    font-size: 0.6rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-  }
-
-  .scroll-line {
-    width: 1px;
-    height: 50px;
-    background: linear-gradient(var(--accent), transparent);
-    animation: scrollPulse 2s ease-in-out infinite;
-  }
-
-  /* ── CATEGORIES ── */
-  .categories {
-    padding: 6rem 3rem;
-    background: var(--gray);
-  }
-
-  .section-header {
-    text-align: center;
-    margin-bottom: 4rem;
-  }
-
-  .section-label {
-    font-size: 0.6rem;
-    letter-spacing: 0.5em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 1rem;
-    display: block;
-  }
-
-  .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 700;
-    line-height: 1.1;
-  }
-
-  .categories-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1px;
-    background: rgba(200,169,110,0.1);
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  .cat-card {
-    background: var(--gray);
-    padding: 3rem 2rem;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.4s;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .cat-card::before {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 2px;
-    background: var(--accent);
-    transform: scaleX(0);
-    transition: transform 0.4s;
-  }
-
-  .cat-card:hover::before { transform: scaleX(1); }
-
-  .cat-card:hover { background: var(--gray2); }
-
-  .cat-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    display: block;
-  }
-
-  .cat-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-  }
-
-  .cat-desc {
-    font-size: 0.7rem;
-    color: var(--text-muted);
-    letter-spacing: 0.05em;
-  }
-
-  /* ── MENU ── */
-  .menu {
-    padding: 6rem 3rem;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  .menu-tabs {
-    display: flex;
-    gap: 0;
-    margin-bottom: 3rem;
-    border-bottom: 1px solid rgba(200,169,110,0.2);
-    overflow-x: auto;
-    scrollbar-width: none;
-  }
-
-  .menu-tabs::-webkit-scrollbar { display: none; }
-
-  .tab-btn {
-    background: none;
-    border: none;
-    color: var(--text-muted);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.65rem;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    padding: 1rem 1.5rem;
-    cursor: pointer;
-    border-bottom: 2px solid transparent;
-    margin-bottom: -1px;
-    transition: all 0.3s;
-    white-space: nowrap;
-  }
-
-  .tab-btn.active {
-    color: var(--accent);
-    border-bottom-color: var(--accent);
-  }
-
-  .tab-btn:hover { color: var(--white); }
-
-  .menu-panel { display: none; }
-  .menu-panel.active { display: block; }
-
-  .menu-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1px;
-    background: rgba(200,169,110,0.08);
-  }
-
-  .menu-item {
-    background: var(--black);
-    padding: 2rem;
-    transition: background 0.3s;
-    position: relative;
-  }
-
-  .menu-item:hover { background: var(--gray2); }
-
-  .menu-item-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 0.5rem;
-    gap: 1rem;
-  }
-
-  .menu-item-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
-    font-weight: 700;
-    line-height: 1.2;
-  }
-
-  .menu-item-price {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
-    color: var(--accent);
-    white-space: nowrap;
-    font-weight: 500;
-  }
-
-  .menu-item-desc {
-    font-size: 0.72rem;
-    color: var(--text-muted);
-    line-height: 1.6;
-    letter-spacing: 0.02em;
-  }
-
-  .menu-item-tag {
-    display: inline-block;
-    margin-top: 0.8rem;
-    font-size: 0.55rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    padding: 0.25rem 0.6rem;
-    border: 1px solid rgba(200,169,110,0.3);
-    color: var(--accent);
-  }
-
-  /* ── STORY ── */
-  .story {
-    padding: 6rem 3rem;
-    background: var(--gray);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6rem;
-    align-items: center;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  .story-visual {
-    position: relative;
-    aspect-ratio: 3/4;
-    max-height: 500px;
-  }
-
-  .story-box {
-    position: absolute;
-    inset: 0;
-    background: var(--gray2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 5rem;
-  }
-
-  .story-box-accent {
-    position: absolute;
-    bottom: -1rem;
-    right: -1rem;
-    width: 80%;
-    height: 80%;
-    border: 1px solid rgba(200,169,110,0.3);
-    z-index: -1;
-  }
-
-  .story-text p {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.05rem;
-    line-height: 1.9;
-    color: rgba(245,240,235,0.75);
-    margin-bottom: 1.5rem;
-  }
-
-  .story-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    margin-top: 2.5rem;
-    padding-top: 2.5rem;
-    border-top: 1px solid rgba(200,169,110,0.2);
-  }
-
-  .stat-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    font-weight: 900;
-    color: var(--accent);
-    display: block;
-  }
-
-  .stat-label {
-    font-size: 0.6rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-  }
-
-  /* ── LOCATION ── */
-  .location-section {
-    padding: 6rem 3rem;
-  }
-
-  .location-wrapper {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: start;
-  }
-
-  .location-info { }
-
-  .info-block {
-    margin-bottom: 2rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid rgba(200,169,110,0.1);
-  }
-
-  .info-block:last-child { border-bottom: none; }
-
-  .info-label {
-    font-size: 0.6rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 0.5rem;
-    display: block;
-  }
-
-  .info-value {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
-    line-height: 1.6;
-  }
-
-  .map-container {
-    background: var(--gray2);
-    aspect-ratio: 4/3;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .map-overlay {
-    position: absolute;
-    inset: 0;
-    background:
-      linear-gradient(rgba(10,10,10,0.1), rgba(10,10,10,0.1));
-  }
-
-  .map-pin {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -100%);
-    text-align: center;
-    z-index: 2;
-  }
-
-  .map-pin-dot {
-    width: 16px;
-    height: 16px;
-    background: var(--accent);
-    border-radius: 50%;
-    margin: 0 auto;
-    box-shadow: 0 0 0 4px rgba(200,169,110,0.3);
-    animation: pinPulse 2s ease-in-out infinite;
-  }
-
-  .map-pin-label {
-    background: var(--black);
-    padding: 0.4rem 0.8rem;
-    font-size: 0.65rem;
-    letter-spacing: 0.1em;
-    white-space: nowrap;
-    margin-top: 0.5rem;
-    border: 1px solid rgba(200,169,110,0.3);
-  }
-
-  /* Fake map streets */
-  .map-streets {
-    position: absolute;
-    inset: 0;
-    opacity: 0.15;
-  }
-
-  .street-h, .street-v {
-    position: absolute;
-    background: var(--white);
-  }
-
-  /* ── FOOTER ── */
-  footer {
-    background: var(--gray);
-    padding: 4rem 3rem 2rem;
-    border-top: 1px solid rgba(200,169,110,0.1);
-  }
-
-  .footer-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 3rem;
-    margin-bottom: 3rem;
-  }
-
-  .footer-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    font-weight: 900;
-    letter-spacing: 0.3em;
-    margin-bottom: 1rem;
-  }
-
-  .footer-logo span { color: var(--accent); }
-
-  .footer-tagline {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    line-height: 1.7;
-    max-width: 250px;
-  }
-
-  .footer-col-title {
-    font-size: 0.6rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 1.2rem;
-  }
-
-  .footer-col ul { list-style: none; }
-
-  .footer-col li {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    margin-bottom: 0.6rem;
-    line-height: 1.5;
-  }
-
-  .footer-bottom {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(200,169,110,0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.65rem;
-    color: var(--text-muted);
-    letter-spacing: 0.1em;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  /* ── WHATSAPP BUTTON ── */
-  .whatsapp-btn {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    z-index: 200;
-    background: #25d366;
-    color: white;
-    width: 58px;
-    height: 58px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
-    animation: waPulse 2.5s ease-in-out infinite;
-    transition: transform 0.2s;
-  }
-
-  .whatsapp-btn:hover {
-    transform: scale(1.1);
-    animation: none;
-  }
-
-  .whatsapp-btn svg { width: 28px; height: 28px; fill: white; }
-
-  .wa-tooltip {
-    position: absolute;
-    right: 70px;
-    background: var(--black);
-    color: var(--white);
-    padding: 0.5rem 1rem;
-    font-size: 0.7rem;
-    letter-spacing: 0.05em;
-    white-space: nowrap;
-    border: 1px solid rgba(200,169,110,0.3);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s;
-  }
-
-  .whatsapp-btn:hover .wa-tooltip { opacity: 1; }
-
-  /* ── ANIMATIONS ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  @keyframes scrollPulse {
-    0%, 100% { opacity: 0.4; transform: scaleY(1); }
-    50% { opacity: 1; transform: scaleY(1.2); }
-  }
-
-  @keyframes pinPulse {
-    0%, 100% { box-shadow: 0 0 0 4px rgba(200,169,110,0.3); }
-    50% { box-shadow: 0 0 0 8px rgba(200,169,110,0.1); }
-  }
-
-  @keyframes waPulse {
-    0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
-    50% { box-shadow: 0 4px 35px rgba(37,211,102,0.7); }
-  }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 768px) {
-    nav { padding: 1.2rem 1.5rem; }
-    .nav-links { display: none; }
-    .hamburger { display: flex; }
-
-    .hero-title { font-size: clamp(3.5rem, 18vw, 6rem); }
-
-    .categories { padding: 4rem 1.5rem; }
-
-    .menu { padding: 4rem 1.5rem; }
-
-    .menu-tabs { gap: 0; }
-
-    .tab-btn { padding: 0.8rem 1rem; font-size: 0.6rem; }
-
-    .story {
-      grid-template-columns: 1fr;
-      gap: 3rem;
-      padding: 4rem 1.5rem;
-    }
-
-    .story-visual { max-height: 280px; }
-
-    .story-stats { grid-template-columns: repeat(3, 1fr); }
-
-    .location-section { padding: 4rem 1.5rem; }
-
-    .location-wrapper { grid-template-columns: 1fr; }
-
-    footer { padding: 3rem 1.5rem 2rem; }
-
-    .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
-
-    .footer-bottom { flex-direction: column; text-align: center; }
-
-    .whatsapp-btn { bottom: 1.5rem; right: 1.5rem; }
-  }
-
-  .section-wrapper {
-    background: var(--black);
-  }
-
-  .story-wrapper {
-    background: var(--gray);
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOIR — Restaurante & Bar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Cormorant+Garamond:wght@300;400;500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- NAV -->
+<!-- ── NAV ── -->
 <nav id="navbar">
-  <a href="#" class="nav-logo">NO<span>IR</span></a>
+  <a href="index.html" class="nav-logo">NO<span>IR</span></a>
   <ul class="nav-links">
     <li><a href="#menu">Menú</a></li>
     <li><a href="#nosotros">Nosotros</a></li>
     <li><a href="#ubicacion">Ubicación</a></li>
     <li><a href="#delivery">Delivery</a></li>
+    <li><a href="menu/menu_noir.pdf" download="Menu_NOIR.pdf">📄 Menú PDF</a></li>
     <li><a href="https://wa.me/595981000000?text=Hola%2C%20quiero%20hacer%20una%20reserva%20en%20NOIR%20🍽️" target="_blank" class="nav-cta">Reservar</a></li>
   </ul>
   <div class="hamburger" onclick="toggleMenu()">
@@ -765,7 +25,7 @@
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- ── HERO ── -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
@@ -784,7 +44,7 @@
   </div>
 </section>
 
-<!-- CATEGORIES -->
+<!-- ── CATEGORIES ── -->
 <div class="story-wrapper" style="padding: 5rem 3rem;">
   <div style="text-align:center; margin-bottom: 3rem;">
     <span class="section-label">Lo que ofrecemos</span>
@@ -814,11 +74,19 @@
   </div>
 </div>
 
-<!-- MENU -->
+<!-- ── MENU ── -->
 <section class="menu" id="menu">
   <div class="section-header">
     <span class="section-label">Nuestra carta</span>
     <h2 class="section-title">El Menú</h2>
+    <a href="menu_noir.pdf" download="Menu_NOIR.pdf" class="pdf-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+        <polyline points="7 10 12 15 17 10"/>
+        <line x1="12" y1="15" x2="12" y2="3"/>
+      </svg>
+      Ver menú en PDF
+    </a>
   </div>
 
   <div class="menu-tabs">
@@ -1067,7 +335,7 @@
   </div>
 </section>
 
-<!-- STORY -->
+<!-- ── STORY ── -->
 <div class="story-wrapper">
   <div class="story" id="nosotros">
     <div class="story-visual">
@@ -1097,7 +365,7 @@
   </div>
 </div>
 
-<!-- LOCATION -->
+<!-- ── LOCATION ── -->
 <section class="location-section" id="ubicacion">
   <div class="section-header">
     <span class="section-label">Encontranos</span>
@@ -1128,23 +396,20 @@
         <span class="info-label">Contacto</span>
         <div class="info-value">+595 981 000 000</div>
       </div>
-      <a href="https://wa.me/595981000000?text=Hola%2C%20quiero%20hacer%20un%20pedido%20delivery%20en%20NOIR%20🍔" target="_blank" class="btn-primary" style="display:inline-block; margin-top: 0.5rem;" id="delivery">Pedir por WhatsApp</a>
+      <a href="https://wa.me/595981000000?text=Hola%2C%20quiero%20hacer%20un%20pedido%20delivery%20en%20NOIR%20🍔" target="_blank" class="btn-primary" id="delivery">Pedir por WhatsApp</a>
     </div>
 
     <!-- Simulated Map -->
     <div class="map-container">
-      <svg class="map-streets" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-        <!-- Horizontal streets -->
+      <svg class="map-streets" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
         <rect x="0" y="60" width="400" height="3" fill="white"/>
         <rect x="0" y="130" width="400" height="5" fill="white"/>
         <rect x="0" y="200" width="400" height="3" fill="white"/>
         <rect x="0" y="260" width="400" height="3" fill="white"/>
-        <!-- Vertical streets -->
         <rect x="80" y="0" width="3" height="300" fill="white"/>
         <rect x="160" y="0" width="5" height="300" fill="white"/>
         <rect x="260" y="0" width="3" height="300" fill="white"/>
         <rect x="340" y="0" width="3" height="300" fill="white"/>
-        <!-- Blocks fill -->
         <rect x="83" y="63" width="74" height="64" fill="rgba(255,255,255,0.03)" rx="2"/>
         <rect x="163" y="63" width="94" height="64" fill="rgba(255,255,255,0.03)" rx="2"/>
         <rect x="263" y="133" width="74" height="64" fill="rgba(255,255,255,0.05)" rx="2"/>
@@ -1160,7 +425,7 @@
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ── FOOTER ── -->
 <footer>
   <div class="footer-inner">
     <div>
@@ -1181,7 +446,7 @@
       <div class="footer-col-title">Contacto</div>
       <ul>
         <li>+595 981 000 000</li>
-        <li>reservas@noirpy.com</li>
+        <li><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="daa8bfa9bfa8acbba99ab4b5b3a8aaa3f4b9b5b7">[email&#160;protected]</a></li>
         <li>Av. Rep. Argentina 1250</li>
         <li>Asunción, Paraguay</li>
       </ul>
@@ -1193,7 +458,7 @@
   </div>
 </footer>
 
-<!-- WHATSAPP BUTTON -->
+<!-- ── WHATSAPP BUTTON ── -->
 <a class="whatsapp-btn" href="https://wa.me/595981000000?text=Hola%2C%20quiero%20hacer%20una%20reserva%20o%20pedido%20en%20NOIR%20🍽️" target="_blank" aria-label="Contactar por WhatsApp">
   <div class="wa-tooltip">Reservar o pedir delivery</div>
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -1201,54 +466,6 @@
   </svg>
 </a>
 
-<script>
-  // Tab switching
-  function showTab(name, btn) {
-    document.querySelectorAll('.menu-panel').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    document.getElementById('tab-' + name).classList.add('active');
-    btn.classList.add('active');
-  }
-
-  // Mobile menu toggle
-  let menuOpen = false;
-  function toggleMenu() {
-    menuOpen = !menuOpen;
-    const nav = document.querySelector('.nav-links');
-    if (menuOpen) {
-      nav.style.display = 'flex';
-      nav.style.flexDirection = 'column';
-      nav.style.position = 'fixed';
-      nav.style.top = '70px';
-      nav.style.left = '0';
-      nav.style.right = '0';
-      nav.style.background = 'rgba(10,10,10,0.97)';
-      nav.style.padding = '2rem';
-      nav.style.gap = '1.5rem';
-      nav.style.backdropFilter = 'blur(12px)';
-      nav.style.borderBottom = '1px solid rgba(200,169,110,0.2)';
-    } else {
-      nav.style.display = '';
-      nav.style.flexDirection = '';
-      nav.style.position = '';
-      nav.style.top = '';
-      nav.style.left = '';
-      nav.style.right = '';
-      nav.style.background = '';
-      nav.style.padding = '';
-      nav.style.gap = '';
-    }
-  }
-
-  // Scroll effect on nav
-  window.addEventListener('scroll', () => {
-    const nav = document.getElementById('navbar');
-    if (window.scrollY > 50) {
-      nav.style.padding = '1rem 3rem';
-    } else {
-      nav.style.padding = '1.5rem 3rem';
-    }
-  });
-</script>
+<script src="js/script.js"></script>
 </body>
 </html>

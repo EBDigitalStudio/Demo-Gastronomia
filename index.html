@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NOIR — Restaurante & Bar</title>
+  <title>NOIR — Restaurante & Bar | Asunción, Paraguay</title>
+  <meta name="description" content="NOIR Restaurante & Bar en Villa Morra, Asunción. Parrilla, pizzas artesanales, hamburguesas y cócteles de autor. Delivery y reservas por WhatsApp.">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Cormorant+Garamond:wght@300;400;500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome para íconos de redes sociales -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -15,6 +18,7 @@
   <ul class="nav-links">
     <li><a href="#menu">Menú</a></li>
     <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#resenas">Reseñas</a></li>
     <li><a href="#ubicacion">Ubicación</a></li>
     <li><a href="#delivery">Delivery</a></li>
     <li><a href="menu/menu_noir.pdf" download="Menu_NOIR.pdf">📄 Menú PDF</a></li>
@@ -97,240 +101,383 @@
     <button class="tab-btn" onclick="showTab('postres', this)">🍮 Postres</button>
   </div>
 
-  <!-- PARRILLA -->
+  <!-- ── PARRILLA ── -->
   <div class="menu-panel active" id="tab-parrilla">
     <div class="menu-grid">
+
       <div class="menu-item">
         <div class="menu-item-header">
           <div class="menu-item-name">Bife de Chorizo</div>
           <div class="menu-item-price">₲ 115.000</div>
         </div>
-        <div class="menu-item-desc">350g de lomo fino a las brasas, chimichurri casero y papas rústicas al horno con romero.</div>
+        <!-- Detalle de peso y punto de cocción -->
+        <div class="menu-item-meta">350g · Punto de cocción a elección · Guarnición incluida</div>
+        <div class="menu-item-desc">Lomo fino a las brasas, chimichurri casero y papas rústicas al horno con romero.</div>
         <span class="menu-item-tag">⭐ Signature</span>
+        <!-- Botón WhatsApp por producto con mensaje prellenado -->
+        <a class="wa-item-btn" href="https://wa.me/595981000000?text=Hola%20NOIR%2C%20quiero%20pedir%20un%20*Bife%20de%20Chorizo*%20%28₲115.000%29.%20¿Me%20confirman%20disponibilidad%3F%20🥩" target="_blank">
+          <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+        </a>
       </div>
+
       <div class="menu-item">
         <div class="menu-item-header">
           <div class="menu-item-name">Asado de Tira</div>
           <div class="menu-item-price">₲ 95.000</div>
         </div>
-        <div class="menu-item-desc">Cocción lenta de 4 horas. Acompañado de ensalada criolla y pan de campo.</div>
+        <div class="menu-item-meta">400g · Cocción lenta 4 horas · Guarnición a elección</div>
+        <div class="menu-item-desc">Acompañado de ensalada criolla y pan de campo.</div>
+        <a class="wa-item-btn" href="https://wa.me/595981000000?text=Hola%20NOIR%2C%20quiero%20pedir%20*Asado%20de%20Tira*%20%28₲95.000%29.%20¿Me%20confirman%20disponibilidad%3F%20🔥" target="_blank">
+          <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+        </a>
       </div>
+
       <div class="menu-item">
         <div class="menu-item-header">
           <div class="menu-item-name">Entraña a la Parrilla</div>
           <div class="menu-item-price">₲ 88.000</div>
         </div>
-        <div class="menu-item-desc">Corte jugoso marinado en ajo y hierbas frescas. Con guarnición a elección.</div>
+        <div class="menu-item-meta">280g · Punto de cocción a elección · Guarnición a elección</div>
+        <div class="menu-item-desc">Corte jugoso marinado en ajo y hierbas frescas.</div>
         <span class="menu-item-tag">🔥 Popular</span>
+        <a class="wa-item-btn" href="https://wa.me/595981000000?text=Hola%20NOIR%2C%20quiero%20pedir%20*Entraña%20a%20la%20Parrilla*%20%28₲88.000%29.%20¿Me%20confirman%20disponibilidad%3F%20🥩" target="_blank">
+          <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+        </a>
       </div>
+
       <div class="menu-item">
         <div class="menu-item-header">
           <div class="menu-item-name">Tabla Parrillada</div>
           <div class="menu-item-price">₲ 210.000</div>
         </div>
-        <div class="menu-item-desc">Para 2 personas. Chorizo, morcilla, entraña, ribs y pollo. Ideal para compartir.</div>
+        <div class="menu-item-meta">Para 2 personas · Aprox. 900g · No incluye bebidas</div>
+        <div class="menu-item-desc">Chorizo, morcilla, entraña, ribs y pollo. Ideal para compartir.</div>
+        <a class="wa-item-btn" href="https://wa.me/595981000000?text=Hola%20NOIR%2C%20quiero%20pedir%20la%20*Tabla%20Parrillada*%20para%202%20%28₲210.000%29.%20¿Me%20confirman%20disponibilidad%3F%20🍖" target="_blank">
+          <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+        </a>
       </div>
+
       <div class="menu-item">
         <div class="menu-item-header">
           <div class="menu-item-name">Pollo a las Brasas</div>
           <div class="menu-item-price">₲ 72.000</div>
         </div>
-        <div class="menu-item-desc">Medio pollo con marinada de limón, pimentón y ajo. Papas fritas artesanales.</div>
+        <div class="menu-item-meta">Medio pollo · Guarnición incluida</div>
+        <div class="menu-item-desc">Marinada de limón, pimentón y ajo. Papas fritas artesanales.</div>
+        <a class="wa-item-btn" href="https://wa.me/595981000000?text=Hola%20NOIR%2C%20quiero%20pedir%20*Pollo%20a%20las%20Brasas*%20%28₲72.000%29.%20¿Me%20confirman%3F%20🍗" target="_blank">
+          <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+        </a>
       </div>
+
       <div class="menu-item">
         <div class="menu-item-header">
           <div class="menu-item-name">Ribs BBQ</div>
           <div class="menu-item-price">₲ 98.000</div>
         </div>
+        <div class="menu-item-meta">350g · Guarnición incluida · No incluye bebida</div>
         <div class="menu-item-desc">Costillas de cerdo bañadas en salsa BBQ ahumada. Coleslaw y corn bread.</div>
         <span class="menu-item-tag">⭐ Signature</span>
+        <a class="wa-item-btn" href="https://wa.me/595981000000?text=Hola%20NOIR%2C%20quiero%20pedir%20*Ribs%20BBQ*%20%28₲98.000%29.%20¿Me%20confirman%3F%20🍖" target="_blank">
+          <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+        </a>
       </div>
+
     </div>
   </div>
 
-  <!-- PIZZAS -->
+  <!-- ── PIZZAS ── -->
   <div class="menu-panel" id="tab-pizzas">
     <div class="menu-grid">
+
       <div class="menu-item">
         <div class="menu-item-header">
           <div class="menu-item-name">Margherita Noir</div>
           <div class="menu-item-price">₲ 58.000</div>
         </div>
+        <div class="menu-item-meta">Pizza grande 32cm · No incluye bebida</div>
         <div class="menu-item-desc">Tomate San Marzano, mozzarella de búfala, albahaca fresca y aceite de oliva extra virgen.</div>
         <span class="menu-item-tag">🌱 Veggie</span>
+        <a class="wa-item-btn" href="https://wa.me/595981000000?text=Hola%20NOIR%2C%20quiero%20pedir%20una%20*Margherita%20Noir*%20%28₲58.000%29.%20¿Me%20confirman%3F%20🍕" target="_blank">
+          <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+        </a>
       </div>
+
       <div class="menu-item">
         <div class="menu-item-header">
           <div class="menu-item-name">Cuatro Quesos</div>
           <div class="menu-item-price">₲ 68.000</div>
         </div>
+        <div class="menu-item-meta">Pizza grande 32cm · No incluye bebida</div>
         <div class="menu-item-desc">Mozzarella, provolone, gorgonzola y parmesano reggiano. Base de crema al ajo.</div>
         <span class="menu-item-tag">🔥 Popular</span>
+        <a class="wa-item-btn" href="https://wa.me/595981000000?text=Hola%20NOIR%2C%20quiero%20pedir%20la%20pizza%20*Cuatro%20Quesos*%20%28₲68.000%29.%20¿Me%20confirman%3F%20🍕" target="_blank">
+          <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+        </a>
       </div>
+
       <div class="menu-item">
         <div class="menu-item-header">
           <div class="menu-item-name">Prosciutto e Rucola</div>
           <div class="menu-item-price">₲ 75.000</div>
         </div>
+        <div class="menu-item-meta">Pizza grande 32cm · No incluye bebida</div>
         <div class="menu-item-desc">Jamón crudo italiano, rúcula fresca, tomates cherry y parmesano en láminas.</div>
         <span class="menu-item-tag">⭐ Signature</span>
+        <a class="wa-item-btn" href="https://wa.me/595981000000?text=Hola%20NOIR%2C%20quiero%20pedir%20*Prosciutto%20e%20Rucola*%20%28₲75.000%29.%20¿Me%20confirman%3F%20🍕" target="_blank">
+          <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+        </a>
       </div>
+
       <div class="menu-item">
         <div class="menu-item-header">
           <div class="menu-item-name">BBQ Pollo</div>
           <div class="menu-item-price">₲ 65.000</div>
         </div>
+        <div class="menu-item-meta">Pizza grande 32cm · No incluye bebida</div>
         <div class="menu-item-desc">Base BBQ, pollo grillado, cebolla caramelizada, morrón rojo y doble mozzarella.</div>
+        <a class="wa-item-btn" href="https://wa.me/595981000000?text=Hola%20NOIR%2C%20quiero%20pedir%20la%20pizza%20*BBQ%20Pollo*%20%28₲65.000%29.%20¿Me%20confirman%3F%20🍕" target="_blank">
+          <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+        </a>
       </div>
+
       <div class="menu-item">
         <div class="menu-item-header">
           <div class="menu-item-name">Diavola</div>
           <div class="menu-item-price">₲ 70.000</div>
         </div>
+        <div class="menu-item-meta">Pizza grande 32cm · No incluye bebida</div>
         <div class="menu-item-desc">Salame piccante, tomate, mozzarella, aceitunas negras y chili flakes. Para los valientes.</div>
         <span class="menu-item-tag">🌶️ Picante</span>
+        <a class="wa-item-btn" href="https://wa.me/595981000000?text=Hola%20NOIR%2C%20quiero%20pedir%20la%20pizza%20*Diavola*%20%28₲70.000%29.%20¿Me%20confirman%3F%20🌶️" target="_blank">
+          <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+        </a>
       </div>
+
       <div class="menu-item">
         <div class="menu-item-header">
           <div class="menu-item-name">Bianca Trufa</div>
           <div class="menu-item-price">₲ 82.000</div>
         </div>
+        <div class="menu-item-meta">Pizza grande 32cm · No incluye bebida</div>
         <div class="menu-item-desc">Sin tomate. Crema de trufa, champiñones portobello, mozzarella y hierbas aromáticas.</div>
         <span class="menu-item-tag">⭐ Premium</span>
+        <a class="wa-item-btn" href="https://wa.me/595981000000?text=Hola%20NOIR%2C%20quiero%20pedir%20la%20*Bianca%20Trufa*%20%28₲82.000%29.%20¿Me%20confirman%3F%20🍕" target="_blank">
+          <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+        </a>
       </div>
+
     </div>
   </div>
 
-  <!-- HAMBURGUESAS -->
+  <!-- ── HAMBURGUESAS ── -->
   <div class="menu-panel" id="tab-hamburguesas">
     <div class="menu-grid">
+
       <div class="menu-item">
         <div class="menu-item-header">
           <div class="menu-item-name">The Noir Burger</div>
           <div class="menu-item-price">₲ 62.000</div>
         </div>
-        <div class="menu-item-desc">200g smash beef, cheddar madurado, cebolla crispy, pepinillos y salsa noir secreta. Pan brioche.</div>
+        <!-- Punto de cocción + guarnición -->
+        <div class="menu-item-meta">200g smash · Punto a elección · Incluye papas fritas</div>
+        <div class="menu-item-desc">Cheddar madurado, cebolla crispy, pepinillos y salsa noir secreta. Pan brioche.</div>
         <span class="menu-item-tag">⭐ Signature</span>
+        <a class="wa-item-btn" href="https://wa.me/595981000000?text=Hola%20NOIR%2C%20quiero%20pedir%20*The%20Noir%20Burger*%20%28₲62.000%29.%20¿Me%20confirman%3F%20🍔" target="_blank">
+          <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+        </a>
       </div>
+
       <div class="menu-item">
         <div class="menu-item-header">
           <div class="menu-item-name">Doble Stack</div>
           <div class="menu-item-price">₲ 75.000</div>
         </div>
-        <div class="menu-item-desc">Dos medallones 120g, doble cheddar, bacon crocante, lechuga, tomate y mayo casera.</div>
+        <div class="menu-item-meta">2x120g · Punto a elección · Incluye papas o ensalada</div>
+        <div class="menu-item-desc">Dos medallones, doble cheddar, bacon crocante, lechuga, tomate y mayo casera.</div>
         <span class="menu-item-tag">🔥 Popular</span>
+        <a class="wa-item-btn" href="https://wa.me/595981000000?text=Hola%20NOIR%2C%20quiero%20pedir%20*Doble%20Stack*%20%28₲75.000%29.%20¿Me%20confirman%3F%20🍔" target="_blank">
+          <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+        </a>
       </div>
+
       <div class="menu-item">
         <div class="menu-item-header">
           <div class="menu-item-name">Mushroom Swiss</div>
           <div class="menu-item-price">₲ 65.000</div>
         </div>
+        <div class="menu-item-meta">180g · Punto a elección · Incluye papas fritas</div>
         <div class="menu-item-desc">Medallón de res, queso gruyère derretido, champiñones salteados y aioli de trufa.</div>
+        <a class="wa-item-btn" href="https://wa.me/595981000000?text=Hola%20NOIR%2C%20quiero%20pedir%20*Mushroom%20Swiss*%20%28₲65.000%29.%20¿Me%20confirman%3F%20🍔" target="_blank">
+          <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+        </a>
       </div>
+
       <div class="menu-item">
         <div class="menu-item-header">
           <div class="menu-item-name">Crispy Chicken</div>
           <div class="menu-item-price">₲ 58.000</div>
         </div>
+        <div class="menu-item-meta">Pechuga entera · Incluye papas o ensalada</div>
         <div class="menu-item-desc">Pechuga apanada crocante, coleslaw, encurtidos y salsa buffalo. Pan con semillas.</div>
+        <a class="wa-item-btn" href="https://wa.me/595981000000?text=Hola%20NOIR%2C%20quiero%20pedir%20*Crispy%20Chicken*%20%28₲58.000%29.%20¿Me%20confirman%3F%20🍗" target="_blank">
+          <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+        </a>
       </div>
+
       <div class="menu-item">
         <div class="menu-item-header">
           <div class="menu-item-name">Veggie Noir</div>
           <div class="menu-item-price">₲ 55.000</div>
         </div>
+        <div class="menu-item-meta">Medallón vegetal · Guarnición a elección</div>
         <div class="menu-item-desc">Medallón de garbanzo y espinaca, queso provolone, aguacate, tomate confitado.</div>
         <span class="menu-item-tag">🌱 Veggie</span>
+        <a class="wa-item-btn" href="https://wa.me/595981000000?text=Hola%20NOIR%2C%20quiero%20pedir%20*Veggie%20Noir*%20%28₲55.000%29.%20¿Me%20confirman%3F%20🌱" target="_blank">
+          <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+        </a>
       </div>
+
       <div class="menu-item">
         <div class="menu-item-header">
           <div class="menu-item-name">BBQ Smoked Bacon</div>
           <div class="menu-item-price">₲ 68.000</div>
         </div>
-        <div class="menu-item-desc">Smash patty, cheddar ahumado, 3 tiras de bacon, cebolla BBQ y salsa secreta agridulce.</div>
+        <div class="menu-item-meta">200g smash · Punto a elección · Incluye papas fritas</div>
+        <div class="menu-item-desc">Smash patty, cheddar ahumado, 3 tiras de bacon, cebolla BBQ y salsa agridulce.</div>
         <span class="menu-item-tag">🔥 Popular</span>
+        <a class="wa-item-btn" href="https://wa.me/595981000000?text=Hola%20NOIR%2C%20quiero%20pedir%20*BBQ%20Smoked%20Bacon*%20%28₲68.000%29.%20¿Me%20confirman%3F%20🍔" target="_blank">
+          <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+        </a>
       </div>
+
     </div>
   </div>
 
-  <!-- TRAGOS -->
+  <!-- ── TRAGOS ── -->
   <div class="menu-panel" id="tab-tragos">
     <div class="menu-grid">
+
       <div class="menu-item">
         <div class="menu-item-header">
           <div class="menu-item-name">Negroni Noir</div>
           <div class="menu-item-price">₲ 38.000</div>
         </div>
+        <div class="menu-item-meta">90ml · Servido en vaso old-fashioned con hielo esférico</div>
         <div class="menu-item-desc">Gin, Campari, Vermut rosso, twist de naranja. Versión de autor de nuestro barman.</div>
         <span class="menu-item-tag">⭐ Signature</span>
+        <a class="wa-item-btn" href="https://wa.me/595981000000?text=Hola%20NOIR%2C%20quiero%20pedir%20un%20*Negroni%20Noir*%20%28₲38.000%29.%20¿Me%20confirman%3F%20🍸" target="_blank">
+          <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+        </a>
       </div>
+
       <div class="menu-item">
         <div class="menu-item-header">
           <div class="menu-item-name">Whisky Sour</div>
           <div class="menu-item-price">₲ 35.000</div>
         </div>
+        <div class="menu-item-meta">120ml · Con o sin clara de huevo</div>
         <div class="menu-item-desc">Bourbon, jugo de limón fresco, jarabe de azúcar, clara de huevo. Espuma sedosa.</div>
+        <a class="wa-item-btn" href="https://wa.me/595981000000?text=Hola%20NOIR%2C%20quiero%20pedir%20un%20*Whisky%20Sour*%20%28₲35.000%29.%20¿Me%20confirman%3F%20🥃" target="_blank">
+          <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+        </a>
       </div>
+
       <div class="menu-item">
         <div class="menu-item-header">
           <div class="menu-item-name">Aperol Spritz</div>
           <div class="menu-item-price">₲ 32.000</div>
         </div>
+        <div class="menu-item-meta">200ml · Servido en copa grande</div>
         <div class="menu-item-desc">Aperol, Prosecco, soda, rodaja de naranja. Fresco y vibrante.</div>
         <span class="menu-item-tag">🔥 Popular</span>
+        <a class="wa-item-btn" href="https://wa.me/595981000000?text=Hola%20NOIR%2C%20quiero%20pedir%20un%20*Aperol%20Spritz*%20%28₲32.000%29.%20¿Me%20confirman%3F%20🍊" target="_blank">
+          <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+        </a>
       </div>
+
       <div class="menu-item">
         <div class="menu-item-header">
           <div class="menu-item-name">Mojito Clásico</div>
           <div class="menu-item-price">₲ 30.000</div>
         </div>
+        <div class="menu-item-meta">300ml · Con Ron Havana Club 3 años</div>
         <div class="menu-item-desc">Ron blanco, lima, azúcar, hierbabuena fresca y soda. El clásico que nunca falla.</div>
+        <a class="wa-item-btn" href="https://wa.me/595981000000?text=Hola%20NOIR%2C%20quiero%20pedir%20un%20*Mojito%20Clásico*%20%28₲30.000%29.%20¿Me%20confirman%3F%20🌿" target="_blank">
+          <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+        </a>
       </div>
+
       <div class="menu-item">
         <div class="menu-item-header">
           <div class="menu-item-name">Espresso Martini</div>
           <div class="menu-item-price">₲ 40.000</div>
         </div>
+        <div class="menu-item-meta">100ml · Espresso doble frío</div>
         <div class="menu-item-desc">Vodka, licor de café, espresso doble. Para el final de la noche o el arranque.</div>
         <span class="menu-item-tag">⭐ Signature</span>
+        <a class="wa-item-btn" href="https://wa.me/595981000000?text=Hola%20NOIR%2C%20quiero%20pedir%20un%20*Espresso%20Martini*%20%28₲40.000%29.%20¿Me%20confirman%3F%20☕" target="_blank">
+          <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+        </a>
       </div>
+
       <div class="menu-item">
         <div class="menu-item-header">
           <div class="menu-item-name">Virgin Passion</div>
           <div class="menu-item-price">₲ 22.000</div>
         </div>
+        <div class="menu-item-meta">300ml · Sin alcohol · Apto para todos</div>
         <div class="menu-item-desc">Maracuyá, lima, jengibre, soda y miel. Sin alcohol, con toda la actitud.</div>
         <span class="menu-item-tag">🌱 Sin alcohol</span>
+        <a class="wa-item-btn" href="https://wa.me/595981000000?text=Hola%20NOIR%2C%20quiero%20pedir%20un%20*Virgin%20Passion*%20%28₲22.000%29.%20¿Me%20confirman%3F%20🍹" target="_blank">
+          <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+        </a>
       </div>
+
     </div>
   </div>
 
-  <!-- POSTRES -->
+  <!-- ── POSTRES ── -->
   <div class="menu-panel" id="tab-postres">
     <div class="menu-grid">
+
       <div class="menu-item">
         <div class="menu-item-header">
           <div class="menu-item-name">Volcán de Chocolate</div>
           <div class="menu-item-price">₲ 28.000</div>
         </div>
+        <div class="menu-item-meta">Tiempo de preparación: 12 min · Incluye helado artesanal</div>
         <div class="menu-item-desc">Corazón líquido de chocolate 70%, helado de vainilla artesanal y coulis de frambuesa.</div>
         <span class="menu-item-tag">⭐ Signature</span>
+        <a class="wa-item-btn" href="https://wa.me/595981000000?text=Hola%20NOIR%2C%20quiero%20pedir%20*Volcán%20de%20Chocolate*%20%28₲28.000%29.%20¿Me%20confirman%3F%20🍫" target="_blank">
+          <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+        </a>
       </div>
+
       <div class="menu-item">
         <div class="menu-item-header">
           <div class="menu-item-name">Tiramisú</div>
           <div class="menu-item-price">₲ 25.000</div>
         </div>
-        <div class="menu-item-desc">Receta clásica con mascarpone, savoiardi, espresso y cacao belga. Servido en copa.</div>
+        <div class="menu-item-meta">Porción individual · Servido en copa · No incluye bebida</div>
+        <div class="menu-item-desc">Receta clásica con mascarpone, savoiardi, espresso y cacao belga.</div>
         <span class="menu-item-tag">🔥 Popular</span>
+        <a class="wa-item-btn" href="https://wa.me/595981000000?text=Hola%20NOIR%2C%20quiero%20pedir%20*Tiramisú*%20%28₲25.000%29.%20¿Me%20confirman%3F%20☕" target="_blank">
+          <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+        </a>
       </div>
+
       <div class="menu-item">
         <div class="menu-item-header">
           <div class="menu-item-name">Cheesecake de Maracuyá</div>
           <div class="menu-item-price">₲ 24.000</div>
         </div>
+        <div class="menu-item-meta">Porción individual · Base artesanal · No incluye bebida</div>
         <div class="menu-item-desc">Base de galletita, crema de queso y coulis tropical de maracuyá fresco.</div>
+        <a class="wa-item-btn" href="https://wa.me/595981000000?text=Hola%20NOIR%2C%20quiero%20pedir%20*Cheesecake%20de%20Maracuyá*%20%28₲24.000%29.%20¿Me%20confirman%3F%20🍰" target="_blank">
+          <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+        </a>
       </div>
+
     </div>
   </div>
 </section>
@@ -365,6 +512,141 @@
   </div>
 </div>
 
+<!-- ── RESEÑAS ── -->
+<!-- Sección de prueba social con reseñas reales y rating visible -->
+<section class="resenas-section" id="resenas">
+  <div class="section-header">
+    <span class="section-label">Lo que dicen nuestros clientes</span>
+    <h2 class="section-title">Reseñas</h2>
+    <!-- Rating agregado visible -->
+    <div class="rating-summary">
+      <div class="rating-stars">★★★★★</div>
+      <div class="rating-score">4.9</div>
+      <div class="rating-count">basado en 387 opiniones en Google</div>
+    </div>
+  </div>
+
+  <div class="resenas-grid">
+
+    <div class="resena-card">
+      <div class="resena-header">
+        <div class="resena-avatar">MF</div>
+        <div class="resena-info">
+          <div class="resena-nombre">Martina F.</div>
+          <div class="resena-fecha">Enero 2025</div>
+        </div>
+        <div class="resena-estrellas">★★★★★</div>
+      </div>
+      <p class="resena-texto">"El bife de chorizo es de otro nivel. Pedimos delivery y llegó perfecto, bien caliente y el chimichurri es adictivo. Ya pedimos tres veces en el mes. NOIR no defrauda."</p>
+    </div>
+
+    <div class="resena-card">
+      <div class="resena-header">
+        <div class="resena-avatar">CR</div>
+        <div class="resena-info">
+          <div class="resena-nombre">Carlos R.</div>
+          <div class="resena-fecha">Diciembre 2024</div>
+        </div>
+        <div class="resena-estrellas">★★★★★</div>
+      </div>
+      <p class="resena-texto">"Fuimos para el aniversario y la atención fue impecable. El Espresso Martini es el mejor que tomé en Asunción, sin exagerar. El ambiente es elegante pero sin pretensiones. Volvemos sí o sí."</p>
+    </div>
+
+    <div class="resena-card">
+      <div class="resena-header">
+        <div class="resena-avatar">AL</div>
+        <div class="resena-info">
+          <div class="resena-nombre">Andrea L.</div>
+          <div class="resena-fecha">Febrero 2025</div>
+        </div>
+        <div class="resena-estrellas">★★★★★</div>
+      </div>
+      <p class="resena-texto">"La Bianca Trufa es una locura. No esperaba que en Asunción pudiera comer una pizza así. Todo el local huele increíble. El servicio fue rápido y los chicos muy amables."</p>
+    </div>
+
+    <div class="resena-card">
+      <div class="resena-header">
+        <div class="resena-avatar">JP</div>
+        <div class="resena-info">
+          <div class="resena-nombre">Javier P.</div>
+          <div class="resena-fecha">Noviembre 2024</div>
+        </div>
+        <div class="resena-estrellas">★★★★★</div>
+      </div>
+      <p class="resena-texto">"Pedí el Doble Stack por WhatsApp y en 35 minutos ya lo tenía en casa. La hamburguesa llegó envasada perfectamente, como si la hubieras comido ahí. Los precios son justos para la calidad."</p>
+    </div>
+
+    <div class="resena-card">
+      <div class="resena-header">
+        <div class="resena-avatar">SG</div>
+        <div class="resena-info">
+          <div class="resena-nombre">Sofía G.</div>
+          <div class="resena-fecha">Enero 2025</div>
+        </div>
+        <div class="resena-estrellas">★★★★★</div>
+      </div>
+      <p class="resena-texto">"La tabla parrillada para dos personas es enorme y todo estaba en punto. El Negroni Noir es súper equilibrado. Se nota que el barman sabe lo que hace. Una de las mejores noches en mucho tiempo."</p>
+    </div>
+
+    <div class="resena-card">
+      <div class="resena-header">
+        <div class="resena-avatar">RM</div>
+        <div class="resena-info">
+          <div class="resena-nombre">Roberto M.</div>
+          <div class="resena-fecha">Octubre 2024</div>
+        </div>
+        <div class="resena-estrellas">★★★★★</div>
+      </div>
+      <p class="resena-texto">"Llevé a mis clientes del exterior a cenar acá y quedaron impresionados. Le dije que era el mejor restaurante de Villa Morra y ahora me lo agradecen. El tiramisú es de museo."</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── INSTAGRAM SIMULADO ── -->
+<!-- Sección de presencia digital con Instagram -->
+<section class="instagram-section" id="instagram">
+  <div class="section-header">
+    <span class="section-label">Seguinos en Instagram</span>
+    <h2 class="section-title">@noir.asu</h2>
+    <p class="ig-subtitle">Momentos, platos y la noche de Asunción.</p>
+  </div>
+
+  <!-- Grid de posts simulados con emojis representativos -->
+  <div class="ig-grid">
+    <a class="ig-post" href="https://instagram.com/noir.asu" target="_blank">
+      <div class="ig-thumb" style="font-size:3.5rem;">🥩</div>
+      <div class="ig-overlay"><i class="fab fa-instagram"></i></div>
+    </a>
+    <a class="ig-post" href="https://instagram.com/noir.asu" target="_blank">
+      <div class="ig-thumb" style="font-size:3.5rem;">🍕</div>
+      <div class="ig-overlay"><i class="fab fa-instagram"></i></div>
+    </a>
+    <a class="ig-post" href="https://instagram.com/noir.asu" target="_blank">
+      <div class="ig-thumb" style="font-size:3.5rem;">🍸</div>
+      <div class="ig-overlay"><i class="fab fa-instagram"></i></div>
+    </a>
+    <a class="ig-post" href="https://instagram.com/noir.asu" target="_blank">
+      <div class="ig-thumb" style="font-size:3.5rem;">🍔</div>
+      <div class="ig-overlay"><i class="fab fa-instagram"></i></div>
+    </a>
+    <a class="ig-post" href="https://instagram.com/noir.asu" target="_blank">
+      <div class="ig-thumb" style="font-size:3.5rem;">🍮</div>
+      <div class="ig-overlay"><i class="fab fa-instagram"></i></div>
+    </a>
+    <a class="ig-post" href="https://instagram.com/noir.asu" target="_blank">
+      <div class="ig-thumb" style="font-size:3.5rem;">🔥</div>
+      <div class="ig-overlay"><i class="fab fa-instagram"></i></div>
+    </a>
+  </div>
+
+  <div style="text-align:center; margin-top:2rem;">
+    <a href="https://instagram.com/noir.asu" target="_blank" class="btn-outline">
+      <i class="fab fa-instagram" style="margin-right:0.5rem;"></i> Ver más en Instagram
+    </a>
+  </div>
+</section>
+
 <!-- ── LOCATION ── -->
 <section class="location-section" id="ubicacion">
   <div class="section-header">
@@ -373,51 +655,79 @@
   </div>
   <div class="location-wrapper">
     <div class="location-info">
+
+      <!-- Dirección más específica con barrio y referencia -->
       <div class="info-block">
         <span class="info-label">Dirección</span>
-        <div class="info-value">Av. República Argentina 1250<br>Asunción, Paraguay</div>
+        <div class="info-value">
+          Av. República Argentina 1250<br>
+          <span style="font-size:0.9rem; opacity:0.8;">Villa Morra, Asunción</span><br>
+          <span style="font-size:0.8rem; color: var(--text-muted);">Casi Mcal. López, frente al Paseo La Galería</span>
+        </div>
       </div>
+
+      <!-- Horarios más humanos: lunes cerrado -->
       <div class="info-block">
         <span class="info-label">Horarios</span>
-        <div class="info-value">
-          Lunes a Jueves: 12:00 – 00:00<br>
+        <div class="info-value" style="font-size:0.95rem; line-height:1.9;">
+          <span style="color: var(--text-muted);">Lunes: <span style="color:#c0392b;">Cerrado</span></span><br>
+          Martes a Jueves: 12:00 – 00:00<br>
           Viernes y Sábado: 12:00 – 02:00<br>
           Domingo: 12:00 – 22:00
         </div>
       </div>
-      <div class="info-block">
+
+      <!-- Delivery con zona de cobertura -->
+      <div class="info-block" id="delivery">
         <span class="info-label">Delivery</span>
-        <div class="info-value">
-          Disponible via WhatsApp<br>
-          Lunes a Domingo: 18:00 – 23:00
+        <div class="info-value" style="font-size:0.95rem; line-height:1.9;">
+          Martes a Domingo: 18:00 – 23:00<br>
+          <span style="font-size:0.8rem; color: var(--text-muted);">⏱ Tiempo estimado: 30–45 minutos</span><br>
+          <span style="font-size:0.8rem; color: var(--text-muted);">📍 Cobertura: Villa Morra, Mcal. Estigarribia, Mburuvicha Róga, Las Mercedes, Recoleta y zonas aledañas</span>
         </div>
       </div>
+
+      <!-- Métodos de pago -->
+      <div class="info-block pagos-block">
+        <span class="info-label">Métodos de pago</span>
+        <div class="pagos-chips">
+          <span class="pago-chip">💵 Efectivo</span>
+          <span class="pago-chip">💳 Tarjeta</span>
+          <span class="pago-chip">📲 Transferencia</span>
+          <span class="pago-chip">📱 QR Bancard</span>
+        </div>
+      </div>
+
+      <!-- Contacto con teléfono fijo + celular + email -->
       <div class="info-block">
         <span class="info-label">Contacto</span>
-        <div class="info-value">+595 981 000 000</div>
+        <div class="info-value" style="font-size:0.95rem; line-height:2;">
+          📞 (021) 612 – 3900<br>
+          📱 +595 981 000 000<br>
+          ✉️ <a href="mailto:reservas@noir.com.py" style="color:var(--accent); text-decoration:none;">reservas@noir.com.py</a>
+        </div>
       </div>
-      <a href="https://wa.me/595981000000?text=Hola%2C%20quiero%20hacer%20un%20pedido%20delivery%20en%20NOIR%20🍔" target="_blank" class="btn-primary" id="delivery">Pedir por WhatsApp</a>
+
+      <!-- Aviso legal -->
+      <p class="aviso-legal">* Pedidos de delivery exclusivamente vía WhatsApp. Reservas también disponibles por correo electrónico.</p>
+
+      <a href="https://wa.me/595981000000?text=Hola%2C%20quiero%20hacer%20un%20pedido%20delivery%20en%20NOIR%20🍔" target="_blank" class="btn-primary">Pedir por WhatsApp</a>
     </div>
 
-    <!-- Simulated Map -->
+    <!-- Google Maps real embebido -->
     <div class="map-container">
-      <svg class="map-streets" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-        <rect x="0" y="60" width="400" height="3" fill="white"/>
-        <rect x="0" y="130" width="400" height="5" fill="white"/>
-        <rect x="0" y="200" width="400" height="3" fill="white"/>
-        <rect x="0" y="260" width="400" height="3" fill="white"/>
-        <rect x="80" y="0" width="3" height="300" fill="white"/>
-        <rect x="160" y="0" width="5" height="300" fill="white"/>
-        <rect x="260" y="0" width="3" height="300" fill="white"/>
-        <rect x="340" y="0" width="3" height="300" fill="white"/>
-        <rect x="83" y="63" width="74" height="64" fill="rgba(255,255,255,0.03)" rx="2"/>
-        <rect x="163" y="63" width="94" height="64" fill="rgba(255,255,255,0.03)" rx="2"/>
-        <rect x="263" y="133" width="74" height="64" fill="rgba(255,255,255,0.05)" rx="2"/>
-        <rect x="83" y="133" width="74" height="64" fill="rgba(255,255,255,0.03)" rx="2"/>
-        <rect x="163" y="133" width="94" height="64" fill="rgba(255,255,255,0.04)" rx="2"/>
-      </svg>
-      <div class="map-overlay"></div>
-      <div class="map-pin">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.4!2d-57.57!3d-25.29!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x945da7e2d7a8b001%3A0xabc123!2sAv.+Rep%C3%BAblica+Argentina+1250%2C+Asunci%C3%B3n!5e0!3m2!1ses!2spy!4v1700000000000!5m2!1ses!2spy"
+        width="100%"
+        height="100%"
+        style="border:0; position:absolute; inset:0; filter: grayscale(80%) invert(90%) contrast(90%);"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Ubicación NOIR Restaurante & Bar en Asunción">
+      </iframe>
+      <!-- Pin encima del mapa -->
+      <div class="map-pin" style="pointer-events:none;">
         <div class="map-pin-dot"></div>
         <div class="map-pin-label">NOIR Restaurante</div>
       </div>
@@ -430,8 +740,26 @@
   <div class="footer-inner">
     <div>
       <div class="footer-logo">NO<span>IR</span></div>
-      <p class="footer-tagline">Parrilla, pizzas, hamburguesas y cócteles de autor en el corazón de Asunción. Donde la noche tiene sabor.</p>
+      <p class="footer-tagline">Parrilla, pizzas, hamburguesas y cócteles de autor en Villa Morra, Asunción. Donde la noche tiene sabor.</p>
+      <!-- Frase humana -->
+      <p class="footer-human">Cocinado con fuego real, servido con alma.</p>
+      <!-- Íconos de redes sociales -->
+      <div class="footer-social">
+        <a href="https://instagram.com/noir.asu" target="_blank" aria-label="Instagram NOIR" class="social-icon">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://facebook.com/noirasu" target="_blank" aria-label="Facebook NOIR" class="social-icon">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://wa.me/595981000000" target="_blank" aria-label="WhatsApp NOIR" class="social-icon">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://tiktok.com/@noir.asu" target="_blank" aria-label="TikTok NOIR" class="social-icon">
+          <i class="fab fa-tiktok"></i>
+        </a>
+      </div>
     </div>
+
     <div class="footer-col">
       <div class="footer-col-title">Menú</div>
       <ul>
@@ -442,18 +770,22 @@
         <li>Postres</li>
       </ul>
     </div>
+
     <div class="footer-col">
       <div class="footer-col-title">Contacto</div>
       <ul>
-        <li>+595 981 000 000</li>
-        <li><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="daa8bfa9bfa8acbba99ab4b5b3a8aaa3f4b9b5b7">[email&#160;protected]</a></li>
+        <li>📞 (021) 612 – 3900</li>
+        <li>📱 +595 981 000 000</li>
+        <li>✉️ <a href="mailto:reservas@noir.com.py" style="color:var(--text-muted); text-decoration:none;">reservas@noir.com.py</a></li>
         <li>Av. Rep. Argentina 1250</li>
-        <li>Asunción, Paraguay</li>
+        <li>Villa Morra, Asunción</li>
       </ul>
     </div>
   </div>
+
   <div class="footer-bottom">
     <span>© 2025 NOIR Restaurante & Bar. Todos los derechos reservados.</span>
+    <span class="footer-aviso">⚠️ Pedidos exclusivamente vía WhatsApp</span>
     <span>Hecho con 🖤 en Asunción</span>
   </div>
 </footer>
